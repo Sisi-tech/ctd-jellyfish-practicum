@@ -1,0 +1,11 @@
+<div>
+    <% content_for :title, "Editing User" %>
+    <h3>Editting User</h3>
+    <%= render "form", user: @user %>
+    <br>
+    
+    <div>
+        <%= link_to "View", @user, class: "action-link" %>
+        <%= link_to "All", users_path, class: "action-link" %>
+    </div>
+</div>

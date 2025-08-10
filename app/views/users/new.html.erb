@@ -1,0 +1,9 @@
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <% content_for :title, "New User" %>
+    <h3 Style="padding-top: 100px">New User</h3>
+    <%= render 'form', user: @user %>
+    <br>
+    <div>
+        <%= link_to "All", users_path, class: "action-link" %>
+    </div>
+</div>
