@@ -83,10 +83,11 @@ jobs:
         with: 
           node-version: '20'
 
-      - name: Set up Database 
-        run: |
-          sudo apt-get -yqq install libpq-dev
-          bin/rails db:create db:schema:load RAILS_ENV=test 
+      - name: Install PostgreSQL client libraries
+        run: sudo apt-get update && sudo apt-get -yqq install libpq-dev
+
+      - name: Set up Database
+        run: bin/rails db:create db:schema:load
         
       - name: Run RSpec tests
         run: bin/rspec
